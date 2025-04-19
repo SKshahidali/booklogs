@@ -2,7 +2,10 @@
 
 A full-stack web application to track your reading progress, manage your book collection, and export your reading data.
 
-![Personal Reading Log Logo](static/booklogo.svg)
+
+
+
+![booklogo](https://github.com/user-attachments/assets/fea4c1ff-aa51-4942-a3f2-43871cfd9274)
 
 ## 📝 Overview
 
