@@ -194,9 +194,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📬 Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+SK SHAHID ALI - skshahidali2001@gmail.com
 
-Project Link: [https://github.com/your-username/personal-reading-log](https://github.com/your-username/personal-reading-log)
+Project Link: [https://github.com/SKshahidali/booklogs](https://github.com/SKshahidali/booklogs)
 
 ---
 
