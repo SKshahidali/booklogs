@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
 
     // API endpoint base URL - update this with your actual domain when deployed
-    const API_URL = '/api';
+    // Get the current origin to handle both local and deployed environments
+    const API_URL = window.location.origin + '/api';
 
     // Show/hide book form
     addBookBtn.addEventListener('click', () => {
@@ -78,11 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
         booksContainer.innerHTML = '<div class="loading">Loading books...</div>';
         
         try {
-            const url = new URL(`${API_URL}/books`);
-            if (status !== 'all') url.searchParams.append('status', status);
-            if (query) url.searchParams.append('query', query);
+            // Fix URL construction
+            let apiUrl = `${API_URL}/books`;
+            const params = new URLSearchParams();
+            if (status !== 'all') params.append('status', status);
+            if (query) params.append('query', query);
             
-            const response = await fetch(url);
+            if (params.toString()) {
+                apiUrl += '?' + params.toString();
+            }
+            
+            const response = await fetch(apiUrl);
             
             if (response.ok) {
                 const books = await response.json();
