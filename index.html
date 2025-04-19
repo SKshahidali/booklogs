@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Reading Log</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Reading Log</h1>
+        <div class="header-buttons">
+            <button id="add-book-btn">Add New Book</button>
+            <button id="export-csv-btn">Export to CSV</button>
+        </div>
+    </header>
+
+    <div class="filters">
+        <h3>Filter Books:</h3>
+        <div class="filter-options">
+            <select id="status-filter">
+                <option value="all">All Books</option>
+                <option value="to-read">To Read</option>
+                <option value="reading">Reading</option>
+                <option value="finished">Finished</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Search by title or author...">
+            <button id="search-btn">Search</button>
+        </div>
+    </div>
+
+    <div id="book-form-container" class="hidden">
+        <div class="form-wrapper">
+            <h2>Add New Book</h2>
+            <form id="book-form">
+                <div class="form-group">
+                    <label for="title">Title*</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author*</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" name="genre">
+                </div>
+                <div class="form-group">
+                    <label for="total-pages">Total Pages</label>
+                    <input type="number" id="total-pages" name="total_pages" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="pages-read">Pages Read</label>
+                    <input type="number" id="pages-read" name="pages_read" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status*</label>
+                    <select id="status" name="status" required>
+                        <option value="to-read">To Read</option>
+                        <option value="reading">Reading</option>
+                        <option value="finished">Finished</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" rows="3"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">Save Book</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main id="books-container">
+        <div class="loading">Loading books...</div>
+    </main>
+
+    <script src="static/app.js"></script>
+</body>
+</html>
